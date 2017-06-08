@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  ruby: &ruby
+    build: .
+    volumes:
+      - .:/app
+
+  hello-world:
+    <<: *ruby
+    command: ruby /app/hello-world.rb
